@@ -41,8 +41,9 @@ export default function Garden() {
         <div className="rounded-lg overflow-hidden shadow-xl">
           <img 
             src={gardenImage}
-            alt="Ogród" 
+            alt="Piękny 0.5-hektarowy ogród z altaną grillową i hamakami w Białym Domku Sandomierz" 
             className="w-full h-[400px] object-cover"
+            loading="lazy"
           />
         </div>
       </div>

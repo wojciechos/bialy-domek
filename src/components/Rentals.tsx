@@ -15,7 +15,12 @@ interface RentalCardProps {
 
 const RentalCard = ({ title, description, image, price, icon: Icon }: RentalCardProps) => (
   <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-    <img src={image} alt={title} className="w-full h-48 object-cover" />
+    <img 
+      src={image} 
+      alt={`${title} - Wypożyczalnia w Białym Domku Sandomierz`} 
+      className="w-full h-48 object-cover"
+      loading="lazy"
+    />
     <div className="p-6">
       <div className="flex items-center gap-2 mb-3">
         <Icon className="text-blue-600" size={24} />
