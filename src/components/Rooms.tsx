@@ -1,30 +1,33 @@
 import React from 'react';
 import { Users, Maximize } from 'lucide-react';
+import orangeRoom from '../images/rooms/orange/40364544_main.webp';
+import purpleRoom from '../images/rooms/purple/14371444_main.webp';
+import blueRoom from '../images/rooms/blue/40364547_blue.webp';
 
 const rooms = [
   {
     name: 'Studio Pomarańczowe',
     size: '35 m²',
     capacity: '2-4 osoby',
-    price: '300 zł',
-    features: ['Osobne wejście', 'Wyjście na taras', 'Wiata garażowa'],
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&q=80&w=2070',
+    price: '180 zł',
+    features: ['Osobne wejście', 'prywatna łazienka', 'Wyjście na taras', 'Wiata garażowa'],
+    image: orangeRoom,
   },
   {
     name: 'Pokój Niebieski',
     size: '15 m²',
     capacity: '2-3 osoby',
-    price: '200 zł',
-    features: ['Wyjście na taras', 'Widok na ogród'],
-    image: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&q=80&w=2070',
+    price: '150 zł',
+    features: ['Wyjście na taras', 'prywatna łazienka', 'Widok na ogród'],
+    image: blueRoom,
   },
   {
     name: 'Pokój Fioletowy',
     size: '12 m²',
     capacity: '2 osoby',
-    price: '180 zł',
-    features: ['Wyjście na taras', 'Przytulna przestrzeń'],
-    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=2070',
+    price: '140 zł',
+    features: ['Wyjście na taras', 'prywatna łazienka', 'Przytulna przestrzeń'],
+    image: purpleRoom,
   },
 ];
 

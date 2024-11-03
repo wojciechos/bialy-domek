@@ -1,5 +1,7 @@
 import React from 'react';
 import { Flower2, TreePine, UtensilsCrossed, Tent } from 'lucide-react';
+import gardenImage from '../images/garden/40314398.webp';
+
 
 const GardenFeature = ({ icon: Icon, title }: {
   icon: React.ElementType;
@@ -38,7 +40,7 @@ export default function Garden() {
         </div>
         <div className="rounded-lg overflow-hidden shadow-xl">
           <img 
-            src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&q=80&w=2069" 
+            src={gardenImage}
             alt="Ogród" 
             className="w-full h-[400px] object-cover"
           />

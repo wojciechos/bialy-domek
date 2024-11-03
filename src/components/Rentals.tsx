@@ -1,7 +1,19 @@
 import React from 'react';
-import { Bike, Waves } from 'lucide-react';
+import { Bike, Waves, LucideIcon } from 'lucide-react';
+import bikeImage from '../images/bikes/438082702_122136055460111546_8912092679081181539_n.jpg';
+import kayakImage from '../images/kayaks/301386209_592888582537275_9157478655882280594_n.jpg';
+import bikeStandardImage from '../images/bikes/464069416_8143858899073081_348231560503831970_n.jpg';
 
-const RentalCard = ({ title, description, image, price, icon: Icon }) => (
+
+interface RentalCardProps {
+  title: string;
+  description: string;
+  image: string;
+  price: number;
+  icon: LucideIcon;
+}
+
+const RentalCard = ({ title, description, image, price, icon: Icon }: RentalCardProps) => (
   <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
     <img src={image} alt={title} className="w-full h-48 object-cover" />
     <div className="p-6">
@@ -21,21 +33,21 @@ export default function Rentals() {
       title: 'Rowery Elektryczne',
       description: 'Nowoczesne rowery elektryczne idealne do zwiedzania okolicy',
       price: 100,
-      image: 'https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&q=80&w=2070',
+      image: bikeImage,
       icon: Bike
     },
     {
       title: 'Rowery Tradycyjne',
-      description: 'Wygodne rowery miejskie i górskie dla całej rodziny',
+      description: 'Rowery dla całej rodziny',
       price: 40,
-      image: 'https://images.unsplash.com/photo-1541625602330-2277a4c46182?auto=format&fit=crop&q=80&w=2070',
+      image: bikeStandardImage,
       icon: Bike
     },
     {
       title: 'Spływy Kajakowe',
       description: 'Organizujemy spływy kajakowe malowniczą Wisłą',
       price: 80,
-      image: 'https://images.unsplash.com/photo-1472745433479-4556f22e32c2?auto=format&fit=crop&q=80&w=2069',
+      image: kayakImage,
       icon: Waves
     }
   ];

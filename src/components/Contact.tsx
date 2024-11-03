@@ -11,21 +11,21 @@ export default function Contact() {
             <Phone className="text-blue-600" size={24} />
             <div>
               <h3 className="font-semibold">Telefon</h3>
-              <p>+48 123 456 789</p>
+              <p>+48 511 762 947</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
             <Mail className="text-blue-600" size={24} />
             <div>
               <h3 className="font-semibold">Email</h3>
-              <p>kontakt@pokoje-sandomierz.pl</p>
+              <p>biaydomek@gmail.com</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
             <MapPin className="text-blue-600" size={24} />
             <div>
               <h3 className="font-semibold">Adres</h3>
-              <p>ul. Przykładowa 123<br />27-600 Sandomierz</p>
+              <p>ul. Ostrówek 74a<br />27-600 Sandomierz</p>
             </div>
           </div>
         </div>

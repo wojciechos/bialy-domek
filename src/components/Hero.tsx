@@ -1,4 +1,5 @@
 import React from 'react';
+import heroImage from '../images/garden/main.jpg';
 
 export default function Hero() {
   return (
@@ -6,7 +7,7 @@ export default function Hero() {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=2070")',
+          backgroundImage: `url(${heroImage})`,
         }}
       >
         <div className="absolute inset-0 bg-black/40" />
