@@ -29,21 +29,32 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <form className="space-y-4">
+        <form 
+          action="mailto:biaydomek@gmail.com" 
+          method="post" 
+          encType="text/plain"
+          className="space-y-4"
+        >
           <input
             type="text"
+            name="name"
             placeholder="Imię i nazwisko"
             className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+            required
           />
           <input
             type="email"
+            name="email"
             placeholder="Email"
             className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+            required
           />
           <textarea
+            name="message"
             placeholder="Wiadomość"
             rows={4}
             className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+            required
           ></textarea>
           <button
             type="submit"
