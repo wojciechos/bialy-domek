@@ -1,7 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const mailtoLink = `mailto:biaydomek@gmail.com?subject=Wiadomość od ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(`
+Imię i nazwisko: ${formData.name}
+Email: ${formData.email}
+
+Wiadomość:
+${formData.message}
+    `)}`;
+    
+    window.location.href = mailtoLink;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <section className="bg-gray-50 rounded-xl p-8">
       <h2 className="text-3xl font-bold text-center mb-12">Kontakt</h2>
@@ -29,15 +55,12 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <form 
-          action="mailto:biaydomek@gmail.com" 
-          method="post" 
-          encType="text/plain"
-          className="space-y-4"
-        >
+        <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             name="name"
+            value={formData.name}
+            onChange={handleChange}
             placeholder="Imię i nazwisko"
             className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
             required
@@ -45,12 +68,16 @@ export default function Contact() {
           <input
             type="email"
             name="email"
+            value={formData.email}
+            onChange={handleChange}
             placeholder="Email"
             className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
             required
           />
           <textarea
             name="message"
+            value={formData.message}
+            onChange={handleChange}
             placeholder="Wiadomość"
             rows={4}
             className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
