@@ -27,7 +27,7 @@ const RentalCard = ({ title, description, image, price, icon: Icon }: RentalCard
         <h3 className="text-xl font-semibold">{title}</h3>
       </div>
       <p className="text-gray-600 mb-4">{description}</p>
-      <div className="text-blue-600 font-bold">{price} zł/dzień</div>
+      <div className="text-blue-600 font-bold">Od {price} zł/dzień</div>
     </div>
   </div>
 );
