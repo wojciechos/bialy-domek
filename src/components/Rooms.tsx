@@ -59,7 +59,7 @@ export default function Rooms() {
                   <li key={i} className="mb-1">• {feature}</li>
                 ))}
               </ul>
-              <div className="text-blue-600 font-bold">Od {room.price}/noc</div>
+              <div className="text-blue-600 font-bold">{room.price}/noc</div>
             </div>
           </div>
         ))}
