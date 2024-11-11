@@ -1,3 +1,11 @@
-# bialy-domek
+## Getting Started
 
-[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/wojciechos/bialy-domek)
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
