@@ -4,6 +4,12 @@ import orangeRoom from '../images/rooms/orange/40364544_main.webp';
 import purpleRoom from '../images/rooms/purple/14371444_main.webp';
 import blueRoom from '../images/rooms/blue/40364547_blue.webp';
 
+const InfoBadge = ({ children }: { children: React.ReactNode }) => (
+  <span className="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">
+    {children}
+  </span>
+);
+
 const rooms = [
   {
     name: 'Studio Pomarańczowe',
@@ -35,9 +41,18 @@ export default function Rooms() {
   return (
     <section className="mb-20">
       <h2 className="text-3xl font-bold text-center mb-4">Nasze Pokoje</h2>
-      <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-        Każdy pokój posiada południową ekspozycję i bezpośrednie wyjście na przestronny taras (55 m²)
-      </p>
+      <div className="text-center space-y-4 mb-12">
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Każdy pokój posiada południową ekspozycję i bezpośrednie wyjście na przestronny taras (55 m²)
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <InfoBadge>Płatność gotówką</InfoBadge>
+          <InfoBadge>Zameldowanie: 14:00</InfoBadge>
+          <InfoBadge>Wymeldowanie: 11:00</InfoBadge>
+          <InfoBadge>Bezpłatny parking</InfoBadge>
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {rooms.map((room, index) => (
           <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
@@ -64,8 +79,13 @@ export default function Rooms() {
           </div>
         ))}
       </div>
-      <div className="mt-8 text-center text-gray-600">
-        <p>Doba pobytowa: 14:00 - 11:00</p>
+
+      <div className="mt-12 bg-gray-50 rounded-lg p-6">
+        <h3 className="text-xl font-semibold mb-4">Ważne informacje:</h3>
+        <ul className="space-y-2 text-gray-600">
+          <li>• Akceptujemy tylko płatność gotówką</li>
+          <li>• Nie oferujemy wyżywienia - każdy pokój wyposażony jest w lodówkę, mikrofalówkę, czajnik oraz komplet sztućców i naczyń</li>
+        </ul>
       </div>
     </section>
   );
