@@ -138,7 +138,14 @@ ${formData.message}
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Napisz do nas..."
+                placeholder="Dzień dobry,
+
+Chciałbym/chciałabym zapytać o możliwość rezerwacji pobytu w terminie...
+Interesuje mnie nocleg dla ... osób.
+
+Proszę o informację odnośnie dostępności i ceny.
+
+Pozdrawiam"
                 rows={4}
                 className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                 required
