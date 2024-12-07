@@ -17,25 +17,14 @@ export default function Map() {
             title="Lokalizacja Biały Domek Sandomierz"
           ></iframe>
         </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-xl font-semibold mb-3">W pobliżu:</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>• Starówka Sandomierza - 2.4 km</li>
-              <li>• Brama Opatowska - 2.7 km</li>
-              <li>• Zamek Królewski - 2.5 km</li>
-              <li>• Rynek - 2.4 km</li>
-              <li>• Wąwóz Królowej Jadwigi - 3.2 km</li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-3">Jak dojechać:</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>• Z drogi krajowej 77 - 5 min</li>
-              <li>• Z dworca PKS - 7 min</li>
-              <li>• Ze stacji PKP - 10 min</li>
-            </ul>
-          </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-3">W pobliżu:</h3>
+          <ul className="space-y-2 text-gray-600">
+            <li>• Starówka Sandomierza - 2.4 km</li>
+            <li>• Brama Opatowska - 2.7 km</li>
+            <li>• Zamek Królewski - 2.5 km</li>
+            <li>• Wąwóz Królowej Jadwigi - 3.2 km</li>
+          </ul>
         </div>
       </div>
     </section>

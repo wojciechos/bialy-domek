@@ -85,6 +85,7 @@ export default function Rooms() {
         <ul className="space-y-2 text-gray-600">
           <li>• Akceptujemy tylko płatność gotówką</li>
           <li>• Nie oferujemy wyżywienia - każdy pokój wyposażony jest w lodówkę, mikrofalówkę, czajnik oraz komplet sztućców i naczyń</li>
+          <li>• Na powitanie serwujemy kawę dla naszych gości</li>
         </ul>
       </div>
     </section>
