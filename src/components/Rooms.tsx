@@ -15,7 +15,7 @@ const rooms = [
     name: 'Studio Pomarańczowe',
     size: '35 m²',
     capacity: '2-4 osoby',
-    price: '180 zł',
+    price: '45',
     features: ['Osobne wejście', 'prywatna łazienka', 'Wyjście na taras', 'Wiata garażowa'],
     image: orangeRoom,
   },
@@ -23,7 +23,7 @@ const rooms = [
     name: 'Pokój Niebieski',
     size: '15 m²',
     capacity: '2-3 osoby',
-    price: '150 zł',
+    price: '50',
     features: ['Wyjście na taras', 'prywatna łazienka', 'Widok na ogród'],
     image: blueRoom,
   },
@@ -31,7 +31,7 @@ const rooms = [
     name: 'Pokój Fioletowy',
     size: '12 m²',
     capacity: '2 osoby',
-    price: '140 zł',
+    price: '70',
     features: ['Wyjście na taras', 'prywatna łazienka', 'Przytulna przestrzeń'],
     image: purpleRoom,
   },
@@ -74,7 +74,11 @@ export default function Rooms() {
                   <li key={i} className="mb-1">• {feature}</li>
                 ))}
               </ul>
-              <div className="text-blue-600 font-bold">{room.price}/noc</div>
+              <div className="text-blue-600 font-bold text-lg flex items-baseline gap-1">
+                <span className="text-sm">od</span>
+                <span className="text-2xl">{room.price} zł</span>
+                <span className="text-sm text-gray-600">za osobę za dobę</span>
+              </div>
             </div>
           </div>
         ))}
