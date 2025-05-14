@@ -88,6 +88,7 @@ export default function Rentals() {
       bikeType: 'electric',
       showBookButton: true,
       features: [
+        'Model trekkingowy Riverside 520 E',
         'Zasięg do 70 km na jednym ładowaniu',
         'W zestawie kask ochronny i sakwa na bagaż',
         'Idealne na wycieczki do Gór Pieprzowych'
