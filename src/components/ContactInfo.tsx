@@ -28,7 +28,6 @@ export default function ContactInfo() {
             <div>
               <h3 className="font-semibold text-lg">Email</h3>
               <p className="text-gray-700"><a href="mailto:bialydomeksandomierz@gmail.com" itemProp="email" className="hover:text-blue-600 transition-colors">bialydomeksandomierz@gmail.com</a></p>
-              <p className="text-sm text-gray-500 mt-1">W celu rezerwacji prosimy użyć formularza powyżej</p>
             </div>
           </div>
           
