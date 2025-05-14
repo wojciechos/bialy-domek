@@ -40,7 +40,7 @@ const RentalCard = ({
       </div>
       <p className="text-gray-600 mb-4">{description}</p>
       <div className="flex justify-between items-center">
-        <div className="text-blue-600 font-bold">Od {price} zł/dzień</div>
+        <div className="text-blue-600 font-bold">{price} zł/dzień</div>
         {showBookButton && (
           <button 
             onClick={() => bikeType && onBookClick && onBookClick(bikeType)}
@@ -68,7 +68,7 @@ export default function Rentals() {
     {
       title: 'Rowery Elektryczne',
       description: 'Nowoczesne rowery elektryczne idealne do zwiedzania okolicy',
-      price: 100,
+      price: 120,
       image: bikeImage,
       icon: Bike,
       bikeType: 'electric',

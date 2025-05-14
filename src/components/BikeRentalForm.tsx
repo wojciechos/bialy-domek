@@ -5,7 +5,7 @@ const FORMSPREE_URL = `https://formspree.io/f/${import.meta.env.VITE_FORMSPREE_I
 
 // Informacje o rowerach
 const BIKES = [
-  { id: 'electric', name: 'Rower Elektryczny', price: 100 },
+  { id: 'electric', name: 'Rower Elektryczny', price: 120 },
   { id: 'standard', name: 'Rower Tradycyjny', price: 40 }
 ];
 
