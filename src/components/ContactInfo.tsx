@@ -44,13 +44,6 @@ export default function ContactInfo() {
             </div>
           </div>
         </div>
-        
-        <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-          <p className="text-gray-600">
-            Skorzystaj z formularza rezerwacji powyżej, aby zarezerwować pobyt w Białym Domku. 
-            Na wszystkie zapytania odpowiadamy najszybciej jak to możliwe.
-          </p>
-        </div>
       </div>
     </section>
   );
