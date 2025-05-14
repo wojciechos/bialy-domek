@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Bike, Waves, LucideIcon, Calendar } from 'lucide-react';
-import bikeImage from '../images/bikes/438082702_122136055460111546_8912092679081181539_n.jpg';
+import { Bike, Waves, LucideIcon, Calendar, Shield, Package } from 'lucide-react';
+import electricBikeImage from '../images/bikes/rower-elektryczny-trekkingowy-riverside-520-e-wysoka-rama.avif';
 import kayakImage from '../images/kayaks/301386209_592888582537275_9157478655882280594_n.jpg';
 import bikeStandardImage from '../images/bikes/464069416_8143858899073081_348231560503831970_n.jpg';
 import BikeRentalModal from './BikeRentalModal';
@@ -14,6 +14,7 @@ interface RentalCardProps {
   bikeType?: string;
   onBookClick?: (bikeType: string) => void;
   showBookButton?: boolean;
+  features?: string[];
 }
 
 const RentalCard = ({ 
@@ -24,7 +25,8 @@ const RentalCard = ({
   icon: Icon, 
   bikeType,
   onBookClick,
-  showBookButton = false
+  showBookButton = false,
+  features = []
 }: RentalCardProps) => (
   <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
     <img 
@@ -39,6 +41,18 @@ const RentalCard = ({
         <h3 className="text-xl font-semibold">{title}</h3>
       </div>
       <p className="text-gray-600 mb-4">{description}</p>
+      
+      {features.length > 0 && (
+        <ul className="text-sm text-gray-600 mb-4">
+          {features.map((feature, i) => (
+            <li key={i} className="mb-1 flex items-start gap-2">
+              <span className="text-blue-600 flex-shrink-0">•</span>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+      
       <div className="flex justify-between items-center">
         <div className="text-blue-600 font-bold">{price} zł/dzień</div>
         {showBookButton && (
@@ -67,12 +81,18 @@ export default function Rentals() {
   const rentals = [
     {
       title: 'Rowery Elektryczne',
-      description: 'Nowoczesne rowery elektryczne idealne do zwiedzania okolicy',
+      description: 'Zwiedzaj Sandomierz bez wysiłku! Zapomnij o zmęczeniu na wzgórzach - wspomaganie elektryczne załatwi sprawę.',
       price: 120,
-      image: bikeImage,
+      image: electricBikeImage,
       icon: Bike,
       bikeType: 'electric',
-      showBookButton: true
+      showBookButton: true,
+      features: [
+        'Wysokiej klasy model Riverside 520 E',
+        'Zasięg do 90 km na jednym ładowaniu',
+        'W zestawie kask ochronny i sakwa na bagaż',
+        'Idealne na wycieczki do Gór Pieprzowych'
+      ]
     },
     {
       title: 'Rowery Tradycyjne',
@@ -93,7 +113,7 @@ export default function Rentals() {
   ];
 
   return (
-    <section className="mb-20">
+    <section className="mb-20" id="rentals">
       <h2 className="text-3xl font-bold text-center mb-4">Wypożyczalnia i Atrakcje</h2>
       <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
         Odkryj piękno Sandomierza i okolic dzięki naszej wypożyczalni rowerów i organizowanym spływom kajakowym
