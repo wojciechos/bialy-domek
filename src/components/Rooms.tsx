@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Users, Maximize, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Users, Maximize, ChevronLeft, ChevronRight, X, Calendar } from 'lucide-react';
+import BookingModal from './BookingModal';
 import orangeRoom from '../images/rooms/orange/40364544_main.webp';
 import orangeRoom2 from '../images/rooms/orange/40314397.webp';
 import orangeRoom3 from '../images/rooms/orange/40364543.webp';
@@ -25,6 +26,7 @@ const InfoBadge = ({ children }: { children: React.ReactNode }) => (
 
 const rooms = [
   {
+    id: 'pomaranczowe',
     name: 'Studio Pomarańczowe',
     size: '35 m²',
     capacity: '2-4 osoby',
@@ -33,6 +35,7 @@ const rooms = [
     images: [orangeRoom, orangeRoom2, orangeRoom3, orangeBathroom1, orangeBathroom2, orangeBathroom3],
   },
   {
+    id: 'niebieski',
     name: 'Pokój Niebieski',
     size: '15 m²',
     capacity: '2-3 osoby',
@@ -41,6 +44,7 @@ const rooms = [
     images: [blueRoom, blueRoom2, blueRoom3, blueRoom4, blueBathroom1, blueBathroom2],
   },
   {
+    id: 'fioletowy',
     name: 'Pokój Fioletowy',
     size: '12 m²',
     capacity: '2 osoby',
@@ -55,6 +59,16 @@ export default function Rooms() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImages, setCurrentImages] = useState<string[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  // Stan dla modala rezerwacji
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
+  const [selectedRoomId, setSelectedRoomId] = useState<string>('');
+  
+  // Funkcja otwierająca modal rezerwacji dla konkretnego pokoju
+  const openBookingModal = (roomId: string) => {
+    setSelectedRoomId(roomId);
+    setBookingModalOpen(true);
+  };
   
   // Funkcja otwierająca lightbox dla konkretnego pokoju
   const openLightbox = (images: string[], startIndex: number = 0) => {
@@ -135,11 +149,20 @@ export default function Rooms() {
                   <li key={i} className="mb-1">• {feature}</li>
                 ))}
               </ul>
-              <div className="text-blue-600 font-bold text-lg flex items-baseline gap-1">
+              <div className="text-blue-600 font-bold text-lg flex items-baseline gap-1 mb-4">
                 <span className="text-sm">od</span>
                 <span className="text-2xl">{room.price} zł</span>
                 <span className="text-sm text-gray-600">za osobę za dobę</span>
               </div>
+              
+              {/* Przycisk rezerwacji */}
+              <button
+                onClick={() => openBookingModal(room.id)}
+                className="w-full flex justify-center items-center gap-2 bg-blue-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-4"
+              >
+                <Calendar size={18} />
+                REZERWUJ TEN POKÓJ
+              </button>
               
               {/* Miniatury zdjęć pokoju */}
               {room.images.length > 1 && (
@@ -211,6 +234,13 @@ export default function Rooms() {
           </div>
         </div>
       )}
+
+      {/* Modal rezerwacji pokoju */}
+      <BookingModal 
+        isOpen={bookingModalOpen} 
+        onClose={() => setBookingModalOpen(false)} 
+        defaultRoom={selectedRoomId}
+      />
 
       <div className="mt-12 bg-gray-50 rounded-lg p-6">
         <h3 className="text-xl font-semibold mb-4">Ważne informacje:</h3>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, Users, Send, Home } from 'lucide-react';
 
 const FORMSPREE_URL = `https://formspree.io/f/${import.meta.env.VITE_FORMSPREE_ID}`;
@@ -13,9 +13,10 @@ const ROOMS = [
 interface BookingFormProps {
   isModal?: boolean;
   onClose?: () => void;
+  defaultRoom?: string;
 }
 
-export default function BookingForm({ isModal = false, onClose }: BookingFormProps) {
+export default function BookingForm({ isModal = false, onClose, defaultRoom }: BookingFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,9 +24,19 @@ export default function BookingForm({ isModal = false, onClose }: BookingFormPro
     checkIn: '',
     checkOut: '',
     guests: 2,
-    room: 'pomaranczowe',
+    room: defaultRoom || 'pomaranczowe',
     message: '',
   });
+
+  // Aktualizuj wybrany pokój, gdy zmienia się defaultRoom
+  useEffect(() => {
+    if (defaultRoom) {
+      setFormData(prevData => ({
+        ...prevData,
+        room: defaultRoom
+      }));
+    }
+  }, [defaultRoom]);
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -79,7 +90,7 @@ Nasz oficjalny adres email: bialydomeksandomierz@gmail.com
           checkIn: '',
           checkOut: '',
           guests: 2,
-          room: 'pomaranczowe',
+          room: defaultRoom || 'pomaranczowe',
           message: '',
         });
       }

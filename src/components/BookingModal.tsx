@@ -5,9 +5,10 @@ import BookingForm from './BookingForm';
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
+  defaultRoom?: string;
 }
 
-export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
+export default function BookingModal({ isOpen, onClose, defaultRoom }: BookingModalProps) {
   useEffect(() => {
     // Prevent scrolling when modal is open
     if (isOpen) {
@@ -57,7 +58,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 <h3 className="text-2xl font-semibold leading-6 text-gray-900 mb-6 text-center" id="modal-title">
                   Zarezerwuj Pobyt
                 </h3>
-                <BookingForm isModal={true} onClose={onClose} />
+                <BookingForm isModal={true} onClose={onClose} defaultRoom={defaultRoom} />
               </div>
             </div>
           </div>
