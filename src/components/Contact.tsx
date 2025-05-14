@@ -73,7 +73,7 @@ ${formData.message}
               <Mail className="text-blue-600" size={24} />
               <div>
                 <h3 className="font-semibold">Email</h3>
-                <p><a href="mailto:biaydomek@gmail.com" itemProp="email">biaydomek@gmail.com</a></p>
+                <p><a href="mailto:bialydomeksandomierz@gmail.com" itemProp="email">bialydomeksandomierz@gmail.com</a></p>
               </div>
             </div>
             <div className="flex items-center gap-4">
