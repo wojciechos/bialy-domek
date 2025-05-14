@@ -81,15 +81,14 @@ export default function Rentals() {
   const rentals = [
     {
       title: 'Rowery Elektryczne',
-      description: 'Zwiedzaj Sandomierz bez wysiłku! Zapomnij o zmęczeniu na wzgórzach - wspomaganie elektryczne załatwi sprawę.',
+      description: 'Nowoczesne rowery elektryczne idealne do zwiedzania okolicy',
       price: 120,
       image: electricBikeImage,
       icon: Bike,
       bikeType: 'electric',
       showBookButton: true,
       features: [
-        'Wysokiej klasy model Riverside 520 E',
-        'Zasięg do 90 km na jednym ładowaniu',
+        'Zasięg do 70 km na jednym ładowaniu',
         'W zestawie kask ochronny i sakwa na bagaż',
         'Idealne na wycieczki do Gór Pieprzowych'
       ]
