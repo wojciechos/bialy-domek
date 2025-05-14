@@ -4,6 +4,7 @@ import Amenities from './components/Amenities';
 import Garden from './components/Garden';
 import Rooms from './components/Rooms';
 import Rentals from './components/Rentals';
+import Testimonials from './components/Testimonials';
 import Map from './components/Map';
 import ContactInfo from './components/ContactInfo';
 import Footer from './components/Footer';
@@ -18,6 +19,7 @@ function App() {
         <Garden />
         <Rooms />
         <Rentals />
+        <Testimonials />
         <Map />
         <ContactInfo />
       </main>
