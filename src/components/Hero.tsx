@@ -6,6 +6,13 @@ import BookingModal from './BookingModal';
 export default function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const scrollToBooking = () => {
+    const bookingElement = document.getElementById('booking');
+    if (bookingElement) {
+      bookingElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="relative h-[70vh]">
       <div 
@@ -29,7 +36,7 @@ export default function Hero() {
         
         {/* Przycisk rezerwacji */}
         <button
-          onClick={() => setIsModalOpen(true)}
+          onClick={scrollToBooking}
           className="animate-pulse bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg flex items-center space-x-2 shadow-lg transition-all transform hover:scale-105"
         >
           <Calendar className="h-5 w-5" />

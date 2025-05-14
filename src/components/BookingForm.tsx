@@ -62,6 +62,10 @@ Liczba gości: ${formData.guests}
 
 Dodatkowe informacje:
 ${formData.message}
+
+---
+Wiadomość wysłana przez formularz na stronie Biały Domek Sandomierz
+Nasz oficjalny adres email: bialydomeksandomierz@gmail.com
           `.trim()
         })
       });
