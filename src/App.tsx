@@ -5,8 +5,10 @@ import Garden from './components/Garden';
 import Rooms from './components/Rooms';
 import Rentals from './components/Rentals';
 import Map from './components/Map';
+import Booking from './components/Booking';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BookingButton from './components/BookingButton';
 
 function App() {
   return (
@@ -18,9 +20,11 @@ function App() {
         <Rooms />
         <Rentals />
         <Map />
+        <Booking />
         <Contact />
       </main>
       <Footer />
+      <BookingButton />
     </div>
   );
 }
