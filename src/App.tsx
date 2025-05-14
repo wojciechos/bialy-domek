@@ -5,7 +5,6 @@ import Garden from './components/Garden';
 import Rooms from './components/Rooms';
 import Rentals from './components/Rentals';
 import Map from './components/Map';
-import Booking from './components/Booking';
 import ContactInfo from './components/ContactInfo';
 import Footer from './components/Footer';
 import BookingButton from './components/BookingButton';
@@ -20,7 +19,6 @@ function App() {
         <Rooms />
         <Rentals />
         <Map />
-        <Booking />
         <ContactInfo />
       </main>
       <Footer />
