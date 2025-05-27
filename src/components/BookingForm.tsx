@@ -3,12 +3,52 @@ import { Calendar, Users, Send, Home } from 'lucide-react';
 
 const FORMSPREE_URL = `https://formspree.io/f/${import.meta.env.VITE_FORMSPREE_ID}`;
 
-// Informacje o pokojach
-const ROOMS = [
-  { id: 'pomaranczowe', name: 'Studio Pomarańczowe', price: 180 },
-  { id: 'niebieski', name: 'Pokój Niebieski', price: 150 },
-  { id: 'fioletowy', name: 'Pokój Fioletowy', price: 140 }
+// Typy dla pokojów
+interface Room {
+  id: string;
+  name: string;
+  maxGuests: number;
+  pricing: Record<number, number>;
+}
+
+// Informacje o pokojach z cenami zależnymi od liczby osób
+const ROOMS: Room[] = [
+  { 
+    id: 'pomaranczowe', 
+    name: 'Studio Pomarańczowe', 
+    maxGuests: 4,
+    pricing: {
+      1: 180,
+      2: 200,
+      3: 220,
+      4: 240
+    }
+  },
+  { 
+    id: 'niebieski', 
+    name: 'Pokój Niebieski', 
+    maxGuests: 3,
+    pricing: {
+      1: 150,
+      2: 160,
+      3: 180
+    }
+  },
+  { 
+    id: 'fioletowy', 
+    name: 'Pokój Fioletowy', 
+    maxGuests: 2,
+    pricing: {
+      1: 140,
+      2: 150
+    }
+  }
 ];
+
+// Funkcja pomocnicza do pobierania ceny
+const getRoomPrice = (room: Room, guests: number): number => {
+  return room.pricing[guests] || 0;
+};
 
 interface BookingFormProps {
   isModal?: boolean;
@@ -38,6 +78,17 @@ export default function BookingForm({ isModal = false, onClose, defaultRoom }: B
     }
   }, [defaultRoom]);
 
+  // Aktualizuj liczbę gości, gdy zmienia się pokój
+  useEffect(() => {
+    const selectedRoom = ROOMS.find(room => room.id === formData.room);
+    if (selectedRoom && formData.guests > selectedRoom.maxGuests) {
+      setFormData(prevData => ({
+        ...prevData,
+        guests: selectedRoom.maxGuests
+      }));
+    }
+  }, [formData.room, formData.guests]);
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -66,7 +117,7 @@ Od: ${formData.name}
 Email: ${formData.email}
 Telefon: ${formData.phone}
 
-Pokój: ${selectedRoom?.name} (${selectedRoom?.price} PLN/dobę)
+Pokój: ${selectedRoom?.name} (${selectedRoom ? getRoomPrice(selectedRoom, formData.guests) : 'Nieznana cena'} PLN/dobę)
 Data przyjazdu: ${formData.checkIn}
 Data wyjazdu: ${formData.checkOut}
 Liczba gości: ${formData.guests}
@@ -217,7 +268,7 @@ Nasz oficjalny adres email: bialydomeksandomierz@gmail.com
             >
               {ROOMS.map(room => (
                 <option key={room.id} value={room.id}>
-                  {room.name} - {room.price} PLN/dobę
+                  {room.name}
                 </option>
               ))}
             </select>
@@ -272,8 +323,10 @@ Nasz oficjalny adres email: bialydomeksandomierz@gmail.com
               className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
               required
             >
-              {[1, 2, 3, 4].map(num => (
-                <option key={num} value={num}>{num}</option>
+              {Array.from({ length: selectedRoom?.maxGuests || 4 }, (_, i) => i + 1).map(num => (
+                <option key={num} value={num}>
+                  {num} {num === 1 ? 'osoba' : num <= 4 ? 'osoby' : 'osób'}
+                </option>
               ))}
             </select>
           </div>
@@ -299,7 +352,7 @@ Nasz oficjalny adres email: bialydomeksandomierz@gmail.com
                 Wybrany pokój: <span className="text-blue-700">{selectedRoom.name}</span>
               </p>
               <p className="text-gray-700">
-                Cena: <span className="text-blue-700 font-semibold">{selectedRoom.price} PLN za dobę</span>
+                Cena: <span className="text-blue-700 font-semibold">{selectedRoom ? getRoomPrice(selectedRoom, formData.guests) : 'Nieznana cena'} PLN za dobę</span>
               </p>
             </div>
           )}
