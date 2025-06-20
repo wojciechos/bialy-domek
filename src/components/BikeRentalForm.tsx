@@ -261,7 +261,7 @@ Nasz oficjalny adres email: bialydomeksandomierz@gmail.com
               className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-600 focus:border-transparent"
               required
             >
-              {[1, 2, 3, 4, 5].map(num => (
+              {[1, 2].map(num => (
                 <option key={num} value={num}>{num}</option>
               ))}
             </select>
