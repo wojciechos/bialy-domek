@@ -27,8 +27,8 @@ const ROOMS: Room[] = [
     name: 'Pokój Niebieski', 
     maxGuests: 2,
     pricing: {
-      1: 160,
-      2: 170,
+      1: 170,
+      2: 180,
     }
   },
   { 
