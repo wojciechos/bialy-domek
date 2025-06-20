@@ -16,22 +16,19 @@ const ROOMS: Room[] = [
   { 
     id: 'pomaranczowe', 
     name: 'Studio Pomarańczowe', 
-    maxGuests: 4,
+    maxGuests: 2,
     pricing: {
-      1: 180,
+      1: 190,
       2: 200,
-      3: 220,
-      4: 240
     }
   },
   { 
     id: 'niebieski', 
     name: 'Pokój Niebieski', 
-    maxGuests: 3,
+    maxGuests: 2,
     pricing: {
-      1: 150,
-      2: 160,
-      3: 180
+      1: 160,
+      2: 170,
     }
   },
   { 
@@ -39,8 +36,8 @@ const ROOMS: Room[] = [
     name: 'Pokój Fioletowy', 
     maxGuests: 2,
     pricing: {
-      1: 140,
-      2: 150
+      1: 150,
+      2: 160
     }
   }
 ];

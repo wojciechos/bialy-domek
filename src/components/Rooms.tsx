@@ -29,8 +29,8 @@ const rooms = [
     id: 'pomaranczowe',
     name: 'Studio Pomarańczowe',
     size: '35 m²',
-    capacity: '2-4 osoby',
-    price: '60',
+    capacity: '2 osoby (+1 dziecko)',
+    price: '200',
     features: ['Osobne wejście', 'prywatna łazienka', 'Wyjście na taras', 'Wiata garażowa'],
     images: [orangeRoom, orangeRoom2, orangeRoom3, orangeBathroom1, orangeBathroom2, orangeBathroom3],
   },
@@ -38,8 +38,8 @@ const rooms = [
     id: 'niebieski',
     name: 'Pokój Niebieski',
     size: '15 m²',
-    capacity: '2-3 osoby',
-    price: '60',
+    capacity: '2 osoby',
+    price: '180',
     features: ['Wyjście na taras', 'prywatna łazienka', 'Widok na ogród'],
     images: [blueRoom, blueRoom2, blueRoom3, blueRoom4, blueBathroom1, blueBathroom2],
   },
@@ -48,7 +48,7 @@ const rooms = [
     name: 'Pokój Fioletowy',
     size: '12 m²',
     capacity: '2 osoby',
-    price: '75',
+    price: '160',
     features: ['Wyjście na taras', 'prywatna łazienka', 'Przytulna przestrzeń'],
     images: [purpleRoom, purpleRoom2, purpleBathroom1, purpleBathroom2],
   },
@@ -150,9 +150,8 @@ export default function Rooms() {
                 ))}
               </ul>
               <div className="text-blue-600 font-bold text-lg flex items-baseline gap-1 mb-4">
-                <span className="text-sm">od</span>
                 <span className="text-2xl">{room.price} zł</span>
-                <span className="text-sm text-gray-600">za osobę za dobę</span>
+                <span className="text-sm text-gray-600">za dobę</span>
               </div>
               
               {/* Przycisk rezerwacji */}
