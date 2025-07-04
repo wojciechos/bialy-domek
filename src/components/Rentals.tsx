@@ -82,7 +82,7 @@ export default function Rentals() {
     {
       title: 'Rowery Elektryczne',
       description: 'Nowoczesne rowery elektryczne idealne do zwiedzania okolicy',
-      price: 120,
+      price: 150,
       image: electricBikeImage,
       icon: Bike,
       bikeType: 'electric',
@@ -97,7 +97,7 @@ export default function Rentals() {
     {
       title: 'Rowery Tradycyjne',
       description: 'Rowery dla całej rodziny',
-      price: 40,
+      price: 70,
       image: bikeStandardImage,
       icon: Bike,
       bikeType: 'standard',
@@ -106,7 +106,7 @@ export default function Rentals() {
     {
       title: 'Spływy Kajakowe',
       description: 'Organizujemy spływy kajakowe malowniczą Wisłą',
-      price: 80,
+      price: 100,
       image: kayakImage,
       icon: Waves
     }
